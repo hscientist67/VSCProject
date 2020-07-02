@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  
+    <title>Hello, world!</title>
+  </head>
+  <body>
+      <div id="app" class="container">
+    <div class="jumbotron">
+        <h1 class="display-4">Hello, world!</h1>
+        <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+        <hr class="my-4">
+        <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+        <p class="lead">
+          <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+        </p>
+      </div>
+
+      <ul class="list-group">
+        <li  class="list-group-item" v-for="category of categories" v-on:click="GetCategoryById(category)">{{ category.title }}</li>
+        
+      </ul>
+      
+    </br>
+      <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title"> {{ category.title }}</h5>
+          <h6 class="card-subtitle mb-2 text-muted">{{ category.title }}</h6>
+          <p class="card-text">{{ category.description  }}</p>
+         
+        </div>
+      </div>
+      <div>
+        <form v-on:submit.prevent="loginonsubmit"  method="POST">
+          <div class="form-group">
+            <label for="">Username</label>
+            <input type="text" required v-model="username" name="username" class="form-control"  placeholder="Username">
+          </div>
+          <div class="form-group">
+            <label for="">Password</label>
+            <input type="password" required v-model="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+          </div>        
+          <button type="submit" class="btn btn-primary">Send</button>
+        </form>
+      </div>
+    </br>
+    <div>
+      <ul class="list-group">
+        <li  class="list-group-item" v-for="value of values" >{{ value }}</li>
+        
+      </ul>
+    </div>
+    </div>
+    
+  </br>
+  
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="index.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+  </body>
+</html> 
